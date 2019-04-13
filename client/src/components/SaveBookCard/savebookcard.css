@@ -1,0 +1,19 @@
+.card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px
+}
+
+img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 30px
+}
+
+.author {
+    margin-bottom: 20px;
+}
+
+.SaveBtn {
+    margin-left: 20px;
+}

@@ -28,12 +28,6 @@ if (process.env.NODE_ENV === "production") {
 // Import routes and/or controllers and give the server access to them.
 require("./controllers")(app);
 
-// Send every other request to the React app
-// If no API routes are hit, send the React app
-app.use(function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-
 // Start the server
 app.listen(PORT, function () {
   console.log("App running on port " + PORT);

@@ -3,15 +3,14 @@ const path = require("path");
 
 module.exports = function (app) {
 
+    // Save Books
     app.post("/api/books", model.save);
 
+    // Get Saved Books
+    app.get("/api/savedBooks", model.load);
 
-    // // Matches with "/api/books/:id"
-    // app.route("/:id")
-    //     .delete(model.delete);
-
-
-
+    // Delete Book
+    app.delete("/api/books/:id", model.remove);
 
     // Send every other request to the React app
     // If no API routes are hit, send the React app

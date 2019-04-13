@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import BookCard from "../components/BookCard";
+import SaveBookCard from "../components/SaveBookCard";
 import API from "../utils/API";
+import Jumbotron from "../components/Jumbotron";
 
 class BookSearch extends Component {
 
@@ -30,6 +31,7 @@ class BookSearch extends Component {
     render() {
         return (
             <div>
+                <Jumbotron />
                 <div className="card">
                     <div className="card-body">
                         Book Search
@@ -42,11 +44,12 @@ class BookSearch extends Component {
                 <div>
                     {this.state.books.map(book => (
                         //console.log(book.volumeInfo.authors),
-                        <BookCard
+                        <SaveBookCard
                             savedBook={this.savedBook}
                             key={book.id}
                             id={book.id}
                             title={book.volumeInfo.title}
+                            buttonTitle="Save"
                             author={book.volumeInfo.authors !== undefined ? book.volumeInfo.authors.join(', ') : null}
                             description={book.volumeInfo.description}
                             image={book.volumeInfo.imageLinks !== undefined ? book.volumeInfo.imageLinks.smallThumbnail : null}

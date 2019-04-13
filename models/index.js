@@ -1,32 +1,26 @@
 var db = require("../config");
-    
+
 module.exports = {
 
     save: function (req, res) {
-
-        console.log("req", req.body)
-
         db.Book
-        .create(req.body)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-
-
-        // db.Book.find({ saved: false })
-        //     .then(function (dbArticle) {
-
-        //         if (dbArticle.length == 0) {
-        //             res.render("noArticles");
-        //         }
-        //         else {
-        //             console.log(dbArticle)
-        //             res.render("index", { dbArticle });
-        //         }
-        //     })
-        //     .catch(function (err) {
-        //         // If an error occurred, send it to the client
-        //         res.json(err);
-        //     });
+            .create(req.body)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
+    load: function (req, res) {
+        db.Book
+            .find(req.query)
+            .sort({ date: -1 })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
+    remove: function (req, res) {
+        db.Book
+            .findById({ _id: req.params.id })
+            .then(dbModel => dbModel.remove())
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     }
 
 }
