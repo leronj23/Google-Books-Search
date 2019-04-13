@@ -1,29 +1,22 @@
-# Create React Express App
+# Google Book Search
 
-## About This Boilerplate
+Use your memory skills with random characters you grew up to love.
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+Click on each character one by one to wi the game. If you click the same character twice, the game is over.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+All this brought to you by React. I hope like and enjoy...
 
-## Starting the app locally
+# Deployed URL
+https://fathomless-atoll-51083.herokuapp.com/
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+![Clicky-Game](https://github.com/leronj23/Clicky-React/blob/master/screenshot/clicky-screenshot.jpg)
 
-```
-npm install
-```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+# Technology used
+* Javascript
+* React
+* Express
+* Mongoose
+* MongoDB
+* Bootstrap
+* NPM
+* JSX
