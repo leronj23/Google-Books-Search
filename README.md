@@ -15,6 +15,7 @@ https://fathomless-atoll-51083.herokuapp.com/
 * Javascript
 * React
 * Express
+* Node
 * Mongoose
 * MongoDB
 * Bootstrap
