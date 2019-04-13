@@ -9,7 +9,7 @@ All this brought to you by React. I hope like and enjoy...
 # Deployed URL
 https://fathomless-atoll-51083.herokuapp.com/
 
-![Clicky-Game](https://github.com/leronj23/Clicky-React/blob/master/screenshot/clicky-screenshot.jpg)
+![Google=Search-Search](https://github.com/leronj23/Clicky-React/blob/master/screenshot/clicky-screenshot.jpg)
 
 # Technology used
 * Javascript
