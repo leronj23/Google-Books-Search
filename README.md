@@ -1,10 +1,6 @@
 # Google Book Search
 
-Use your memory skills with random characters you grew up to love.
-
-Click on each character one by one to wi the game. If you click the same character twice, the game is over.
-
-All this brought to you by React. I hope like and enjoy...
+This app uses the Google Books Api to allow users to search for books. You can also save books to a list for future reference.
 
 # Deployed URL
 https://fathomless-atoll-51083.herokuapp.com/
