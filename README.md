@@ -1,6 +1,6 @@
 # Google Book Search
 
-This app uses the Google Books Api to allow users to search for books. You can also save books to a list for future reference.
+This app uses the Google Books Api to allow users to search for books and view them in the Google Play store. You can also save books to a list for future reference.
 
 # Deployed URL
 https://fathomless-atoll-51083.herokuapp.com/
