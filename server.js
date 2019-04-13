@@ -1,8 +1,8 @@
 // Import all required npm libraries
-var mongoose = require("mongoose");
 var express = require("express");
+var mongoose = require("mongoose");
 var logger = require("morgan");
-var path = require ('path');
+var path = require('path');
 
 // Sets up the Express App
 const PORT = process.env.PORT || 3001;
@@ -25,11 +25,16 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-// Import routes and controllers and give the server access to them.
-// require("./controllers")(app);
-// require("./routes")(app);
+// Import routes and/or controllers and give the server access to them.
+require("./controllers")(app);
+
+// Send every other request to the React app
+// If no API routes are hit, send the React app
+app.use(function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+app.listen(PORT, function () {
+  console.log("App running on port " + PORT);
 });

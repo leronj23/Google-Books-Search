@@ -17,12 +17,15 @@ class BookSearch extends Component {
         event.preventDefault();
 
         if (this.state.search) {
-
             API.getBooks(this.state.search)
                 .then(res => this.setState({ books: res.data.items }))
                 .catch(err => console.log(err));
         }
-    };
+    }
+
+    savedBook = bookInfo => {
+        API.saveBook(bookInfo)
+    }
 
     render() {
         return (
@@ -37,22 +40,19 @@ class BookSearch extends Component {
                 </div>
 
                 <div>
-                {this.state.books.map(book => (
-                    console.log(book.volumeInfo.authors),
-                    <BookCard
-                        // selectedFriend={this.selectedFriend}
-                        key={book.id}
-                        id={book.id}
-                        title={book.volumeInfo.title}
-                        authors={book.volumeInfo.authors !== undefined ? book.volumeInfo.authors.join(', ') : null}
-
-                        //authors={book.volumeInfo.authors}
-                        description={book.volumeInfo.description}
-                        image={book.volumeInfo.imageLinks !== undefined ? book.volumeInfo.imageLinks.smallThumbnail : null}
-                        link={book.volumeInfo.infoLink}
-                        
-                    />
-                ))}
+                    {this.state.books.map(book => (
+                        //console.log(book.volumeInfo.authors),
+                        <BookCard
+                            savedBook={this.savedBook}
+                            key={book.id}
+                            id={book.id}
+                            title={book.volumeInfo.title}
+                            author={book.volumeInfo.authors !== undefined ? book.volumeInfo.authors.join(', ') : null}
+                            description={book.volumeInfo.description}
+                            image={book.volumeInfo.imageLinks !== undefined ? book.volumeInfo.imageLinks.smallThumbnail : null}
+                            link={book.volumeInfo.infoLink}
+                        />
+                    ))}
                 </div>
             </div>
         )
